@@ -75,8 +75,11 @@ You can run them from any directory, as long as the full project path is provide
 http://localhost:8080/swagger
 ```
 
-### 8.Stop
+### 8.Clean Up (Optional)
+If you want to reset the environment, remove the migration files, drop the database, and stop the containers:
 ```bash
+del D:\test\phantom_mask_bu2-main\PhantomMask.Api\Migrations\*.cs
+dotnet ef database drop --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj --force
 docker-compose down
 ```
 
