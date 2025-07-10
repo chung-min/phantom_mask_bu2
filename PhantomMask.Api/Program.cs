@@ -5,8 +5,13 @@ using PhantomMask.Api.Data.Initializer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<PhantomMaskDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var envConn = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+if (!string.IsNullOrEmpty(envConn))
+{
+    connectionString = envConn;
+}
+builder.Services.AddDbContext<PhantomMaskDbContext>(options => options.UseSqlServer(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -18,7 +23,19 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 
 ////Configure the HTTP request pipeline.
 //using (var scope = app.Services.CreateScope())

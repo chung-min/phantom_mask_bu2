@@ -1,0 +1,6 @@
+services:
+  phantommask.api:
+    image: ${DOCKER_REGISTRY-}phantommaskapi
+    build:
+      context: PhantomMask.Api
+      dockerfile: Dockerfile
