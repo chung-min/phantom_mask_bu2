@@ -67,7 +67,7 @@ dotnet ef migrations add Init --project D:\test\phantom_mask_bu2-main\PhantomMas
 dotnet ef database update --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
 dotnet run --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj import_data
 ```
-> Important: Do not run the following commands from inside the project folder.
+> Do not run the following commands from inside the project folder.
 You can run them from any directory, as long as the full project path is provided.
 
 ### 7. Open the Swagger UI
@@ -80,8 +80,12 @@ If you want to reset the environment, remove the migration files, drop the datab
 ```bash
 del D:\test\phantom_mask_bu2-main\PhantomMask.Api\Migrations\*.cs
 dotnet ef database drop --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj --force
+
+cd D:\test\phantom_mask_bu2-main
 docker-compose down
 ```
+> Before deleting migration files or dropping the database, make sure you are not inside the project folder (phantom_mask_bu2-main) to avoid file locks or access issues.
+It's recommended to cd to another drive (e.g., C:\) before running the delete or drop commands.
 
 ## Additional Data
 > If you have an ERD or any other materials that could help with understanding the system, please include them here.
