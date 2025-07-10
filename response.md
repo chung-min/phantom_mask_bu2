@@ -1,5 +1,4 @@
 # Response
-> The Current content is an **example template**; please edit it to fit your style and content.
 
 ## Requirement Completion Rate
 * [x] List pharmacies, optionally filtered by specific time and/or day of the week.
