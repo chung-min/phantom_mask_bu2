@@ -24,28 +24,50 @@
 ## Test Coverage Report
 Thank you for your request. Currently, test coverage is not implemented in the project, so I am unable to provide a report. 
 
+## Overview
+
+This project is a backend API for PhantomMask, using ASP.NET Core and SQL Server running in Docker containers.
+
+---
+
+## Prerequisites
+
+- [Docker](https://docs.docker.com/get-docker/) installed and running
+- [.NET SDK](https://dotnet.microsoft.com/download) installed (make sure `dotnet` command works)
+- Basic knowledge of Docker and command line usage
+
+---
+
 ## Deployment
-* To deploy the project locally using Docker, run the following commands:
-1. Download the source code
-2. Open Command Prompt
+Follow these steps to deploy the project locally using Docker:
+### 1. Download the source code
+Clone or download the repository to your local machine.
+
+### 2. Open Command Prompt
+
+### 3. Navigate to the project folder
+Navigate to the folder containing `Dockerfile` and `docker-compose.yml`.  
+For example, if your project is in `D:\test`:
 ```bash
-# Navigate to the project folder containing Dockerfile and docker-compose.yml:
-# If the project path is under D:\test
 cd D:\test\phantom_mask_bu2-main
 ```
-3. Start the containers (API and SQL Server) using Docker Compose
+
+### 4. Start the containers
+Run Docker Compose to start both API and SQL Server containers:
 ```bash
 docker-compose up -d
 ```
-4. Check the running containers
+
+### 5. Check the running containers
 ```bash
 docker ps
 ```
 > Make sure that both containers — phantom_mask_bu2-main-phant and phantommask-sqlserver — are running.
-5. Import Data into the Database
+
+### 6. Import Data into the Database
+Make sure the .NET SDK is installed (download from https://dotnet.microsoft.com/download if needed).
+Run the following commands from any directory (not inside the project folder), specifying the full project path:
 ```bash
-# Run the following commands in order
-# Check if .NET SDK is installed. Download and install the latest .NET SDK from https://dotnet.microsoft.com/download
 dotnet tool install --global dotnet-ef
 dotnet ef migrations add Init --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
 dotnet ef database update --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
@@ -53,9 +75,15 @@ dotnet run --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.A
 ```
 > Important: Do not run the following commands from inside the project folder.
 You can run them from any directory, as long as the full project path is provided.
-6. Open the Swagger UI
+
+### 7. Open the Swagger UI
 ```bash
 http://localhost:8080/swagger
+```
+
+### 8.Stop
+```bash
+docker-compose down
 ```
 
 ## Additional Data
