@@ -11,21 +11,21 @@ This project is a backend API for PhantomMask, using ASP.NET Core and SQL Server
 
 ## Requirement Completion Rate
 * [x] List pharmacies, optionally filtered by specific time and/or day of the week.
-  * Implemented at xxx API.
+  * Implemented at `pharmacies` API.
 * [x] List all masks sold by a given pharmacy with an option to sort by name or price.
-  * Implemented at xxx API.
+  * Implemented at `pharmacies/{pharmacyId}/masks` API.
 * [x] List all pharmacies that offer a number of mask products within a given price range, where the count is above, below, or between given thresholds.
-  * Implemented at xxx API.
+  * Implemented at `pharmacies/mask-count-by-price-range` API.
 * [x] Show the top N users who spent the most on masks during a specific date range.
-  * Implemented at xxx API.
+  * Implemented at `users/top-spenders` API.
 * [x] Process a purchase where a user buys masks from multiple pharmacies at once.
-  *  Implemented at xxx API.
+  *  Implemented at `users/{userId}/purchase` API.
 * [x] Update the stock quantity of an existing mask product by increasing or decreasing it.
-  * Implemented at xxx API.
+  * Implemented at `masks/stock/batch` API.
 * [x] Create or update multiple mask products for a pharmacy at once, including name, price, and stock quantity.
-  * Implemented at xxx API.
+  * Implemented at `pharmacies/{pharmacyId}/masks/batch` API.
 * [x] Search for pharmacies or masks by name and rank the results by relevance to the search term.
-  * Implemented at xxx API.
+  * Implemented at `pharmacies-and-masks/search` API.
 
 ## API Document
 [API Documentation](docs/ApiDocs.pdf)
