@@ -22,14 +22,6 @@
 ## API Document
 [API Documentation](docs/ApiDocs.pdf)
 
-## Import Data Commands
-Please run these two script commands to migrate the data into the database.
-
-```bash
-$ rake import_data:pharmacies[PATH_TO_FILE]
-$ rake import_data:users[PATH_TO_FILE]
-```
-
 ## Test Coverage Report
 I wrote down the xx unit tests for the APIs I built. Please check the test coverage report here.
 
