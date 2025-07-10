@@ -44,7 +44,7 @@ bundle exec rspec spec
 1. Download the source code
 2. Open Command Prompt
 ```bash
-#Navigate to the project folder containing Dockerfile and docker-compose.yml:
+# Navigate to the project folder containing Dockerfile and docker-compose.yml:
 cd D:\test\phantom_mask_bu2-main
 ```
 3.Start the containers (API and SQL Server) using Docker Compose
@@ -58,23 +58,10 @@ docker ps
 > Make sure that both containers — phantommask.api and phantommask-sqlserver — are running.
 5.Import Data into the Database
 ```bash
-#
+# Run the following commands in order
 dotnet ef migrations add Init --project D:\測試\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
 dotnet ef database update --project D:\測試\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
 dotnet run --project D:\測試\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj import_data
-```
-
-```bash
-# Build the Docker image with development environment
-$ docker build --build-arg ENV=development -t my-project:1.0.0 .
-
-# Start the service using docker-compose
-$ docker-compose up -d
-
-# Access the container to run data import tasks
-$ docker exec -it my-project bash
-$ rake import_data:pharmacies[PATH_TO_FILE]
-$ rake import_data:user[PATH_TO_FILE]
 ```
 
 ## Additional Data
