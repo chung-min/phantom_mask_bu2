@@ -45,23 +45,30 @@ bundle exec rspec spec
 2. Open Command Prompt
 ```bash
 # Navigate to the project folder containing Dockerfile and docker-compose.yml:
+# If the project path is under D:\test
 cd D:\test\phantom_mask_bu2-main
 ```
-3.Start the containers (API and SQL Server) using Docker Compose
+3. Start the containers (API and SQL Server) using Docker Compose
 ```bash
 docker-compose up -d
 ```
-4.Check the running containers
+4. Check the running containers
 ```bash
 docker ps
 ```
 > Make sure that both containers — phantom_mask_bu2-main-phant and phantommask-sqlserver — are running.
-5.Import Data into the Database
+5. Import Data into the Database
 ```bash
 # Run the following commands in order
 dotnet ef migrations add Init --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
 dotnet ef database update --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
 dotnet run --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj import_data
+```
+> Important: Do not run the following commands from inside the project folder.
+You can run them from any directory, as long as the full project path is provided.
+6. Open the Swagger UI
+```bash
+http://localhost:8080/swagger
 ```
 
 ## Additional Data
