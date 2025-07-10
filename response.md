@@ -20,8 +20,7 @@
   * Implemented at xxx API.
 
 ## API Document
-> * Please describe how to use the API in the API documentation.
-> * You can edit by any format (e.g., Markdown or OpenAPI) or free tools (e.g., [hackMD](https://hackmd.io/), [postman](https://www.postman.com/), [google docs](https://docs.google.com/document/u/0/), or  [swagger](https://swagger.io/specification/)).
+[API Documentation](docs/PhantomMask.Api Swagger.pdf)
 
 ## Import Data Commands
 Please run these two script commands to migrate the data into the database.
