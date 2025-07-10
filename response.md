@@ -20,7 +20,7 @@
   * Implemented at xxx API.
 
 ## API Document
-[API Documentation](docs/PhantomMask.Api Swagger.pdf)
+[API Documentation](docs/ApiDocs.pdf)
 
 ## Import Data Commands
 Please run these two script commands to migrate the data into the database.
