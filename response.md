@@ -22,13 +22,7 @@
 [API Documentation](docs/ApiDocs.pdf)
 
 ## Test Coverage Report
-I wrote down the xx unit tests for the APIs I built. Please check the test coverage report here.
-
-You can run the test script by using the command below:
-
-```bash
-bundle exec rspec spec
-```
+Thank you for your request. Currently, test coverage is not implemented in the project, so I am unable to provide a report. 
 
 ## Deployment
 * To deploy the project locally using Docker, run the following commands:
