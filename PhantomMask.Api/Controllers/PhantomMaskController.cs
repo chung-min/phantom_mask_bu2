@@ -26,6 +26,11 @@ namespace PhantomMask.Api.Controllers
         }
 
         #region 1.List pharmacies, optionally filtered by specific time and/or day of the week.
+        /// <summary>
+        /// 1.List pharmacies, optionally filtered by specific time and/or day of the week.
+        /// </summary>
+        /// <param name="day">Day of the week filter (e.g., "Mon", "Tue", "Wed", etc.)</param>
+        /// <param name="time">Time filter in 24-hour format without colon (e.g., "0900" for 9 AM, "1430" for 2:30 PM)</param>
         [HttpGet("pharmacies")]
         public async Task<IActionResult> GetPharmacies([FromQuery] string? day = null, [FromQuery] string? time = null)
         {
@@ -47,6 +52,11 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 2.List all masks sold by a given pharmacy with an option to sort by name or price.
+        /// <summary>
+        /// 2.List all masks sold by a given pharmacy with an option to sort by name or price.
+        /// </summary>
+        /// <param name="pharmacyId">ID of the pharmacy</param>
+        /// <param name="sortBy">Sort masks by "name" or "price"</param>
         [HttpGet("pharmacies/{pharmacyId}/masks")]
         public async Task<IActionResult> GetMasksByPharmacy(int pharmacyId, [FromQuery] string? sortBy = null)
         {
@@ -78,6 +88,13 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 3.List all pharmacies that offer a number of mask products within a given price range, where the count is above, below, or between given thresholds.
+        /// <summary>
+        /// 3.List all pharmacies that offer a number of mask products within a given price range, where the count is above, below, or between given thresholds.
+        /// </summary>
+        /// <param name="minPrice">Minimum price of mask products (numeric value)</param>
+        /// <param name="maxPrice">Maximum price of mask products (numeric value)</param>
+        /// <param name="countMin">Minimum count of mask products within price range (numeric value)</param>
+        /// <param name="countMax">Maximum count of mask products within price range (numeric value)</param>
         [HttpGet("pharmacies/mask-count-by-price-range")]
         public async Task<IActionResult> GetPharmaciesByMaskPriceAndCount([FromQuery] decimal? minPrice = null, [FromQuery] decimal? maxPrice = null, [FromQuery] int? countMin = null, [FromQuery] int? countMax = null)
         {
@@ -107,6 +124,12 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 4.Show the top N users who spent the most on masks during a specific date range.
+        /// <summary>
+        /// 4.Show the top N users who spent the most on masks during a specific date range.
+        /// </summary>
+        /// <param name="dateS">Start date in format YYYYMMDD, e.g., 20250101<</param>
+        /// <param name="dateE">End date in format YYYYMMDD, e.g., 20250115</param>
+        /// <param name="topN">Number of top users to return</param>
         [HttpGet("users/top-spenders")]
         public async Task<IActionResult> GetTopSpenders([FromQuery] string dateS, [FromQuery] string dateE, [FromQuery] int? topN = null)
         {
@@ -137,6 +160,11 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 5.Process a purchase where a user buys masks from multiple pharmacies at once.
+        /// <summary>
+        /// 5.Process a purchase where a user buys masks from multiple pharmacies at once.
+        /// </summary>
+        /// <param name="userId">The ID of the user making the purchase.</param>
+        /// <param name="request">PurchaseRequestDTO</param>
         [HttpPost("users/{userId}/purchase")]
         public async Task<IActionResult> ProcessPurchase(int userId, [FromBody] List<PurchaseRequestDTO> request)
         {
@@ -233,6 +261,10 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 6.Update the stock quantity of an existing mask product by increasing or decreasing it.
+        /// <summary>
+        /// 6.Update the stock quantity of an existing mask product by increasing or decreasing it.
+        /// </summary>
+        /// <param name="stockChanges">MaskStockChangeDTO</param>
         [HttpPut("masks/stock/batch")]
         public async Task<IActionResult> UpdateMultipleMaskStocks([FromBody] List<MaskStockChangeDTO> stockChanges)
         {
@@ -284,6 +316,12 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 7.Create or update multiple mask products for a pharmacy at once, including name, price, and stock quantity.
+        /// <summary>
+        /// 7.Create or update multiple mask products for a pharmacy at once, including name, price, and stock quantity.
+        /// </summary>
+        /// <param name="pharmacyId">ID of the pharmacy</param>
+        /// <param name="masks">MaskSaveDTO</param>
+        /// <returns></returns>
         [HttpPost("pharmacies/{pharmacyId}/masks/batch")]
         public async Task<IActionResult> CreateOrUpdateMasks(int pharmacyId, [FromBody] List<MaskSaveDTO> masks)
         {
@@ -394,6 +432,10 @@ namespace PhantomMask.Api.Controllers
         #endregion
 
         #region 8.Search for pharmacies or masks by name and rank the results by relevance to the search term.
+        /// <summary>
+        /// 8.Search for pharmacies or masks by name and rank the results by relevance to the search term.
+        /// </summary>
+        /// <param name="query">Search term. Enter any text to find matching pharmacies or masks by name.</param>
         [HttpGet("pharmacies-and-masks/search")]
         public async Task<IActionResult> SearchPharmaciesAndMasks([FromQuery] string query)
         {
