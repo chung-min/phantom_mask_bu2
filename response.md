@@ -2,21 +2,21 @@
 > The Current content is an **example template**; please edit it to fit your style and content.
 
 ## Requirement Completion Rate
-* [ ] List pharmacies, optionally filtered by specific time and/or day of the week.
+* [x] List pharmacies, optionally filtered by specific time and/or day of the week.
   * Implemented at xxx API.
-* [ ] List all masks sold by a given pharmacy with an option to sort by name or price.
+* [x] List all masks sold by a given pharmacy with an option to sort by name or price.
   * Implemented at xxx API.
-* [ ] List all pharmacies that offer a number of mask products within a given price range, where the count is above, below, or between given thresholds.
+* [x] List all pharmacies that offer a number of mask products within a given price range, where the count is above, below, or between given thresholds.
   * Implemented at xxx API.
-* [ ] Show the top N users who spent the most on masks during a specific date range.
+* [x] Show the top N users who spent the most on masks during a specific date range.
   * Implemented at xxx API.
-* [ ] Process a purchase where a user buys masks from multiple pharmacies at once.
+* [x] Process a purchase where a user buys masks from multiple pharmacies at once.
   *  Implemented at xxx API.
-* [ ] Update the stock quantity of an existing mask product by increasing or decreasing it.
+* [x] Update the stock quantity of an existing mask product by increasing or decreasing it.
   * Implemented at xxx API.
-* [ ] Create or update multiple mask products for a pharmacy at once, including name, price, and stock quantity.
+* [x] Create or update multiple mask products for a pharmacy at once, including name, price, and stock quantity.
   * Implemented at xxx API.
-* [ ] Search for pharmacies or masks by name and rank the results by relevance to the search term.
+* [x] Search for pharmacies or masks by name and rank the results by relevance to the search term.
   * Implemented at xxx API.
 
 ## API Document
