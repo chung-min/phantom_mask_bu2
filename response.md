@@ -41,6 +41,28 @@ bundle exec rspec spec
 
 ## Deployment
 * To deploy the project locally using Docker, run the following commands:
+1. Download the source code
+2. Open Command Prompt
+```bash
+#Navigate to the project folder containing Dockerfile and docker-compose.yml:
+cd D:\test\phantom_mask_bu2-main
+```
+3.Start the containers (API and SQL Server) using Docker Compose
+```bash
+docker-compose up -d
+```
+4.Check the running containers
+```bash
+docker ps
+```
+> Make sure that both containers — phantommask.api and phantommask-sqlserver — are running.
+5.Import Data into the Database
+```bash
+#
+dotnet ef migrations add Init --project D:\測試\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
+dotnet ef database update --project D:\測試\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
+dotnet run --project D:\測試\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj import_data
+```
 
 ```bash
 # Build the Docker image with development environment
@@ -54,33 +76,6 @@ $ docker exec -it my-project bash
 $ rake import_data:pharmacies[PATH_TO_FILE]
 $ rake import_data:user[PATH_TO_FILE]
 ```
-
-* If you do not use Docker, please provide detailed instructions including the following:
-1. Environment Requirements
-2. Build & Run Steps
-
-```bash
-# Install dependencies
-$ bundle install
-
-# Set up the database (sample config/database.yml may be provided)
-$ rails db:setup
-
-# Import data
-$ rake import_data:pharmacies[PATH_TO_FILE]
-$ rake import_data:user[PATH_TO_FILE]
-
-# Start the server
-$ rails server
-```
-
-> * If any environment variables are required, please include instructions (e.g., create a .env file).
-> * If the project relies on special permissions, external services, or third-party APIs, be sure to include setup and initialization steps.
-
-* If you have deployed the demo site, please provid the demo site url.
-> The demo site is ready on my AWS demo site; you can try any APIs on this demo site.
-
-**This ensures others can deploy the project successfully, whether or not they are using Docker.**
 
 ## Additional Data
 > If you have an ERD or any other materials that could help with understanding the system, please include them here.
