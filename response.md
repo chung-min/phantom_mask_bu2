@@ -55,7 +55,7 @@ docker-compose up -d
 ```bash
 docker ps
 ```
-> Make sure that both containers — phantommask.api and phantommask-sqlserver — are running.
+> Make sure that both containers — phantom_mask_bu2-main-phant and phantommask-sqlserver — are running.
 5.Import Data into the Database
 ```bash
 # Run the following commands in order
