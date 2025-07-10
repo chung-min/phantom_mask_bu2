@@ -61,7 +61,6 @@ docker ps
 
 ### 6. Import Data into the Database
 Make sure the .NET SDK is installed (download from https://dotnet.microsoft.com/download if needed).
-Run the following commands from any directory (not inside the project folder), specifying the full project path:
 ```bash
 dotnet tool install --global dotnet-ef
 dotnet ef migrations add Init --project D:\test\phantom_mask_bu2-main\PhantomMask.Api\PhantomMask.Api.csproj
