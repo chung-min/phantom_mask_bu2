@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhantomMask.Api", "PhantomMask.Api\PhantomMask.Api.csproj", "{70EC9573-FD04-4080-8826-B94A04B25D25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70EC9573-FD04-4080-8826-B94A04B25D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70EC9573-FD04-4080-8826-B94A04B25D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70EC9573-FD04-4080-8826-B94A04B25D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70EC9573-FD04-4080-8826-B94A04B25D25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1179501-D112-4B81-92FA-535613DED205}
+	EndGlobalSection
+EndGlobal
