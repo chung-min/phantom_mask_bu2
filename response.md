@@ -7,7 +7,14 @@ This project is a backend API for PhantomMask, using ASP.NET Core and SQL Server
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) installed and running
-- [.NET SDK](https://dotnet.microsoft.com/download) installed (make sure `dotnet` command works)
+- [.NET SDK](https://dotnet.microsoft.com/download) .NET SDK version 8.0 or later is installed (make sure `dotnet` command works)
+- SQL Server 2019 Docker image (`mcr.microsoft.com/mssql/server:2019-latest`)
+
+### Built With
+- ASP.NET Core Web API
+- Entity Framework Core
+- Docker & Docker Compose
+- SQL Server 2019 (Docker)
 
 ## Requirement Completion Rate
 * [x] List pharmacies, optionally filtered by specific time and/or day of the week.
