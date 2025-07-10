@@ -57,7 +57,7 @@ docker-compose up -d
 ```bash
 docker ps
 ```
-> Make sure that both containers — phantom_mask_bu2-main-phant and phantommask-sqlserver — are running.
+> Make sure that both containers — phantommask.api and phantommask-sqlserver — are running.
 
 ### 6. Import Data into the Database
 Make sure the .NET SDK is installed (download from https://dotnet.microsoft.com/download if needed).
