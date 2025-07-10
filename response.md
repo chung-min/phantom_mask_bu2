@@ -4,15 +4,11 @@
 
 This project is a backend API for PhantomMask, using ASP.NET Core and SQL Server running in Docker containers.
 
----
-
 ## Prerequisites
 
 - [Docker](https://docs.docker.com/get-docker/) installed and running
 - [.NET SDK](https://dotnet.microsoft.com/download) installed (make sure `dotnet` command works)
 - Basic knowledge of Docker and command line usage
-
----
 
 ## Requirement Completion Rate
 * [x] List pharmacies, optionally filtered by specific time and/or day of the week.
